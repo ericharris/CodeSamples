@@ -12,16 +12,16 @@ Each system (client and server) have their relevant files in the full system pat
 - puppet-client/etc/puppet/puppet.conf (puppet client configuration)
 
 ## Initial server setup
-Testing was done with AWS Ubuntu 14.04 64-bit instances. I set up two, one to operate as the puppet server, the other to operate as a web node and puppet client.
+Testing was done with AWS Ubuntu 14.04 64-bit instances. I set up two, one to operate as the Puppet server, the other to operate as a web node and Puppet client.
 
 ### Server Configuration
-First, I had to download and setup the puppet repository.
+First, I had to download and setup the Puppet repository.
 ```bash
 wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
 sudo dpkg -i puppetlabs-release-trusty.deb
 sudo apt-get update
 ```
-Then install the puppet packages.
+Then install the Puppet packages.
 ```bash
 sudo apt-get install puppetmaster-passenger
 ```
@@ -46,13 +46,13 @@ sudo service apache2 start
 ```
 
 ### Client / Ruby Node config
-First, I had to download and setup the puppet repository.
+First, I had to download and setup the Puppet repository.
 ```bash
 wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
 sudo dpkg -i puppetlabs-release-trusty.deb
 sudo apt-get update
 ```
-Then install the puppet packages.
+Then install the Puppet packages.
 ```bash
 sudo apt-get install puppet
 ```
@@ -68,7 +68,7 @@ Once it is listed, sign the node using the node name from the list.
 ```bash
 sudo puppet cert sign --all
 ```
-Your node is ready to be pushed puppet commands for configuration.
+Your node is ready to be pushed Puppet commands for configuration.
 
 ## Push configuration
 Now it takes one command on your Puppet server to have the Ruby node install Apache, MySQL, NTP and Ruby.
